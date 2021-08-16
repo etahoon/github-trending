@@ -45,32 +45,6 @@ const RepoItem = ({
           ))}
         </>
       </FlexBox>
-      {/* <FlexBox mt={2} alignItems="center">
-        <FlexBox>
-          <Span>{language}</Span>
-        </FlexBox>
-        <Div></Div>
-        <FlexBox ml={3} alignItems="center">
-          <Star fill={theme.colors.textPrimary} />
-          <Span>{totalStars}</Span>
-        </FlexBox>
-        <FlexBox ml={3} alignItems="center">
-          <Fork fill={theme.colors.textPrimary} />
-          <Span>{forks}</Span>
-        </FlexBox>
-        <FlexBox ml={3}>
-          <Span>Built by </Span>
-        </FlexBox>
-        <FlexBox>
-          {builtBy.map(({ avatar, username, url }) => (
-            <Span ml={1}>
-              <AvatarLink href={url} target="_blank">
-                <Avatar src={avatar} alt={username} />
-              </AvatarLink>
-            </Span>
-          ))}
-        </FlexBox>
-      </FlexBox> */}
     </Container>
   );
 };
