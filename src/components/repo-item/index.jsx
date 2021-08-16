@@ -1,5 +1,5 @@
 import React from 'react';
-import { Div, FlexBox, Icon, P, Span } from 'components/html';
+import { FlexBox, P, Span } from 'components/html';
 
 import { ReactComponent as Book } from 'icons/book.svg';
 import { ReactComponent as Star } from 'icons/star.svg';
