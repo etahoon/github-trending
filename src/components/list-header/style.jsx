@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const TabStyles = styled(Link)`
   border: 1px solid ${props => props.theme.colors.borderPrimary};
-  color: ${props => props.theme.colors.textPrimary};
+  color: ${props => props.theme.colors.text[1]};
   float: left;
   font-weight: 500;
   line-height: 20px;
@@ -44,6 +44,5 @@ export const TabStyles = styled(Link)`
     background-color: ${props => props.theme.colors.bgSelectedPrimary};
     border-color: ${props => props.theme.colors.borderSelectedPrimary};
     color: ${props => props.theme.colors.textSelectedPrimary};
-    z-index: 2;
   }
 `;

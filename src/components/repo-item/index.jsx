@@ -1,12 +1,15 @@
 import React from 'react';
-import { FlexBox, P, Span } from 'components/html';
+import { A, Div, FlexBox, P, Span } from 'components/html';
 
 import { ReactComponent as Book } from 'icons/book.svg';
 import { ReactComponent as Star } from 'icons/star.svg';
 import { ReactComponent as Fork } from 'icons/fork.svg';
 
-import { Container, Title, AvatarLink, Avatar } from './style';
+import { Container } from './style';
 import { withTheme } from 'styled-components';
+import { Title } from 'components/title';
+import Avatar from 'components/avatar';
+import Button from 'components/button';
 
 const RepoItem = ({
   username,
@@ -21,29 +24,39 @@ const RepoItem = ({
 }) => {
   return (
     <Container>
-      <FlexBox alignItems="center">
-        <Book fill={theme.colors.textPrimary} />
-        <Title href={url} target="_blank">
-          {username} / {repositoryName}
-        </Title>
-      </FlexBox>
-      <P my={1}>{description}</P>
-      <FlexBox mt={2} alignItems="center">
-        <Span mr={3}>{language}</Span>
-        <Star fill={theme.colors.textPrimary} />
-        <Span mr={3}>{totalStars}</Span>
-        <Fork fill={theme.colors.textPrimary} />
-        <Span mr={3}>{forks}</Span>
-        <Span>Built by </Span>
-        <>
-          {builtBy.map(({ avatar, username, url }) => (
-            <Span ml={1}>
-              <AvatarLink href={url} target="_blank">
-                <Avatar src={avatar} alt={username} />
-              </AvatarLink>
-            </Span>
-          ))}
-        </>
+      <FlexBox justifyContent="space-between">
+        <Div>
+          <FlexBox alignItems="center">
+            <Book fill={theme.colors.text[0]} />
+            <Title href={url} target="_blank" ml={2}>
+              {username} / {repositoryName}
+            </Title>
+          </FlexBox>
+          <P my={1}>{description}</P>
+          <FlexBox mt={2} alignItems="center">
+            <Span mr={3}>{language}</Span>
+            <Star fill={theme.colors.text[0]} />
+            <Span mr={3}>{totalStars}</Span>
+            <Fork fill={theme.colors.text[0]} />
+            <Span mr={3}>{forks}</Span>
+            <Span>Built by </Span>
+            <>
+              {builtBy.map(({ avatar, username, url }) => (
+                <Span ml={1}>
+                  <A href={url} target="_blank">
+                    <Avatar src={avatar} alt={username} />
+                  </A>
+                </Span>
+              ))}
+            </>
+          </FlexBox>
+        </Div>
+        <Div>
+          <Button>
+            <Star fill={theme.colors.text[0]} />
+            <Span ml={1} color="text.1">Star</Span>
+          </Button>
+        </Div>
       </FlexBox>
     </Container>
   );

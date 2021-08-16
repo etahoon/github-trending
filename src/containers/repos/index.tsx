@@ -1,17 +1,12 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import githubTrends from 'github-trends-api';
 
 import List from 'components/list';
 import ListItem from 'components/list-item';
 import RepoItem from 'components/repo-item';
 
 const Repos = () => {
-  const {
-    isLoading,
-    error,
-    data = [],
-  } = useQuery('reposData', () =>
+  const { isLoading, data = [] } = useQuery('reposData', () =>
     fetch('/repositories').then(res => res.json())
   );
 

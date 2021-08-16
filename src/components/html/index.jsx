@@ -10,9 +10,11 @@ import {
   border,
   position,
   shadow,
+  variant,
 } from 'styled-system';
 
 export const styles = css `
+  color: ${props => props.theme.colors.text[0]};
   ${space}
   ${color}
   ${typography}
@@ -23,7 +25,6 @@ export const styles = css `
   ${border}
   ${position}
   ${shadow}
-  color: ${props => props.theme.colors.textPrimary};
 `;
 
 export const P = styled.p`
@@ -47,7 +48,10 @@ export const Div = styled.div`
   ${styles}
 `;
 
+export const A = styled.a`
+  text-decoration:none;
+`;
 
 export const Icon = styled.img`
-  fill: ${props => props.theme.colors.textPrimary};
+  fill: ${props => props.theme.colors.text[0]};
 `;

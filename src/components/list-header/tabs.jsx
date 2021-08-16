@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { P } from 'components/html';
+import { Div, P } from 'components/html';
 import ListTab from './tab';
 import useRoute from 'hooks/use-route';
 import { ROUTES } from 'constant';
@@ -23,7 +23,7 @@ const HeaderTabs = () => {
   }, [pathname]);
 
   return (
-    <P>
+    <Div>
       {tabs.map((t, index) => (
         <ListTab
           key={t.name}
@@ -32,7 +32,7 @@ const HeaderTabs = () => {
           active={t.id === active}
         />
       ))}
-    </P>
+    </Div>
   );
 };
 
