@@ -13,7 +13,9 @@ import {
   variant,
 } from 'styled-system';
 
-export const styles = css `
+import { textTransform, textDecoration, cursor, zIndex } from 'styles/props';
+
+export const styles = css`
   color: ${props => props.theme.colors.text[0]};
   ${space}
   ${color}
@@ -25,6 +27,10 @@ export const styles = css `
   ${border}
   ${position}
   ${shadow}
+  ${cursor}
+  ${zIndex}
+  ${textTransform}
+  ${textDecoration}
 `;
 
 export const P = styled.p`
@@ -49,7 +55,7 @@ export const Div = styled.div`
 `;
 
 export const A = styled.a`
-  text-decoration:none;
+  text-decoration: none;
 `;
 
 export const Icon = styled.img`

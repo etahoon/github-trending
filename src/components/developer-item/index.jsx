@@ -14,18 +14,11 @@ const DeveloperItem = ({
   rank,
   name,
   username,
-  repositoryName,
-  description,
-  language,
-  totalStars,
-  forks,
   url,
-  builtBy = [],
   theme,
   avatar,
   popularRepository,
 }) => {
-  console.log(popularRepository);
   return (
     <Container>
       <FlexBox>
@@ -35,27 +28,29 @@ const DeveloperItem = ({
             <Avatar src={avatar} alt={username} size="large" />
           </A>
         </Span>
-        <FlexBox flexGrow={1}>
-          <FlexBox width="66.66%">
-            <Div width="50%">
+        <FlexBox flexGrow={1} flexWrap="wrap">
+          <FlexBox width={[1, 2 / 3]} flexWrap="wrap">
+            <Div width={[1, 1 / 2]}>
               <Title href={url} target="_blank">
                 {name}
               </Title>
               <P>{username}</P>
             </Div>
-            <Div width="50%">
+            <Div width={[1, 1 / 2]}>
               <FlexBox alignItems="center" mb={2}>
                 <Flame />
                 <Span ml={1}>POPULAR REPO</Span>
               </FlexBox>
               <FlexBox>
                 <Book fill={theme.colors.text[0]} />
-                <Title size="small" ml={2}>{popularRepository.repositoryName}</Title>
+                <Title size="small" ml={2}>
+                  {popularRepository.repositoryName}
+                </Title>
               </FlexBox>
               <Span>{popularRepository.description}</Span>
             </Div>
           </FlexBox>
-          <Div width="33.33%" textAlign="right">
+          <Div width={[null, 1 / 3]} textAlign="right">
             <Button>Follow</Button>
           </Div>
         </FlexBox>

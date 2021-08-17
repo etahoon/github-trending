@@ -25,7 +25,7 @@ const RepoItem = ({
   return (
     <Container>
       <FlexBox justifyContent="space-between">
-        <Div>
+        <Div style={{ overflow: 'hidden' }}>
           <FlexBox alignItems="center">
             <Book fill={theme.colors.text[0]} />
             <Title href={url} target="_blank" ml={2}>
@@ -54,7 +54,9 @@ const RepoItem = ({
         <Div>
           <Button>
             <Star fill={theme.colors.text[0]} />
-            <Span ml={1} color="text.1">Star</Span>
+            <Span ml={1} color="text.1">
+              Star
+            </Span>
           </Button>
         </Div>
       </FlexBox>

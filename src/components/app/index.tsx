@@ -16,6 +16,7 @@ import { GlobalStyle } from 'styles/global';
 
 import darkTheme from 'styles/dark-theme';
 import { ROUTES } from 'constant';
+import { Div } from 'components/html';
 
 const queryClient = new QueryClient();
 
@@ -30,15 +31,17 @@ const App = () => {
               <>
                 <Header />
 
-                <Switch>
-                  <Route path={ROUTES.REPOS}>
-                    <Repos />
-                  </Route>
-                  <Route path={ROUTES.DEVELOPERS}>
-                    <Developers />
-                  </Route>
-                  <Redirect to={ROUTES.REPOS} />
-                </Switch>
+                <Div py={50}>
+                  <Switch>
+                    <Route path={ROUTES.REPOS}>
+                      <Repos />
+                    </Route>
+                    <Route path={ROUTES.DEVELOPERS}>
+                      <Developers />
+                    </Route>
+                    <Redirect to={ROUTES.REPOS} />
+                  </Switch>
+                </Div>
               </>
             </Layout>
           </Router>

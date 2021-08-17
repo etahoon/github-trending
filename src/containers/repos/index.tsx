@@ -1,27 +1,32 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 
 import List from 'components/list';
 import ListItem from 'components/list-item';
 import RepoItem from 'components/repo-item';
+import Filter from 'components/filter';
+import useFetchRepos from 'hooks/use-fetch-repos';
+import { useState } from 'react';
 
 const Repos = () => {
-  const { isLoading, data = [] } = useQuery('reposData', () =>
-    fetch('/repositories').then(res => res.json())
-  );
-
-  console.log('data', data);
+  const [language, setLanguage] = useState(null);
+  const { repos, languages } = useFetchRepos({ language });
 
   return (
-    <div>
-      <List>
-        {data.map(d => (
-          <ListItem key={d.rank}>
-            <RepoItem {...d} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    <List
+      filter={
+        <Filter
+          choices={languages}
+          selected={language}
+          onSelect={setLanguage}
+        />
+      }
+    >
+      {repos.map(d => (
+        <ListItem key={d.rank}>
+          <RepoItem {...d} />
+        </ListItem>
+      ))}
+    </List>
   );
 };
 

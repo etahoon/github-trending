@@ -10,18 +10,14 @@ const Developers = () => {
     fetch('/developers').then(res => res.json())
   );
 
-  console.log('data', data);
-
   return (
-    <div>
-      <List>
-        {data.map(d => (
-          <ListItem key={d.rank}>
-            <DeveloperItem {...d} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    <List>
+      {data.map(d => (
+        <ListItem key={d.rank}>
+          <DeveloperItem {...d} />
+        </ListItem>
+      ))}
+    </List>
   );
 };
 

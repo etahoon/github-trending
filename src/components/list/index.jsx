@@ -6,12 +6,13 @@ import { Container } from './style';
 
 interface Props {
   children: JSX.Element;
+  filter: JSX.Element;
 }
 
-const List: React.FC<Props> = ({ children }: Props) => {
+const List: React.FC<Props> = ({ children, filter }: Props) => {
   return (
     <Container>
-      <ListHeader />
+      <ListHeader filter={filter} />
       <div>{children}</div>
     </Container>
   );
