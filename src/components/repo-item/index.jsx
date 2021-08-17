@@ -11,6 +11,8 @@ import { Title } from 'components/title';
 import Avatar from 'components/avatar';
 import Button from 'components/button';
 
+import { Repo } from 'models/repo';
+
 const RepoItem = ({
   username,
   repositoryName,
@@ -21,7 +23,7 @@ const RepoItem = ({
   url,
   builtBy = [],
   theme,
-}) => {
+}: Repo) => {
   return (
     <Container>
       <FlexBox justifyContent="space-between">

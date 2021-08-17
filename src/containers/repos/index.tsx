@@ -8,7 +8,7 @@ import useFetchRepos from 'hooks/use-fetch-repos';
 import { useState } from 'react';
 
 const Repos = () => {
-  const [language, setLanguage] = useState(null);
+  const [language, setLanguage] = useState('');
   const { repos, languages } = useFetchRepos({ language });
 
   return (

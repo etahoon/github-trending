@@ -2,7 +2,11 @@ import React from 'react';
 
 import { Container } from './style';
 
-const ListItem = ({ children }) => {
+interface Props {
+  children: JSX.Element;
+}
+
+const ListItem = ({ children }: Props) => {
   return <Container>{children}</Container>;
 };
 

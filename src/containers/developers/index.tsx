@@ -1,14 +1,12 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 
 import List from 'components/list';
 import ListItem from 'components/list-item';
 import DeveloperItem from 'components/developer-item';
+import useFetchDevelopers from 'hooks/use-fetch-developers';
 
 const Developers = () => {
-  const { isLoading, data = [] } = useQuery('developersData', () =>
-    fetch('/developers').then(res => res.json())
-  );
+  const { data = [] } = useFetchDevelopers();
 
   return (
     <List>
